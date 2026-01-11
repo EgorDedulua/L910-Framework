@@ -116,7 +116,7 @@ module.exports = (app) => {
 
     app.get('/deliveries', async (req, res) => {
         try {
-            const deliveries = deliveryFileHandler.getAll(deliveriesPath);
+            const deliveries = await deliveryFileHandler.getAll(deliveriesPath);
             res.status(200).json({ data: deliveries });
         } catch (error) {
             console.error('Ошибка при получении всех заказов: ', error);

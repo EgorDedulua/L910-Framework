@@ -2,11 +2,13 @@ const Application = require('./core/application');
 const armyModule = require('./modules/army');
 const museumModule = require('./modules/museum');
 const foodDeliveryModule = require('./modules/foodDeliveryModule');
+const libraryMode = require('./modules/libraryModule');
 
 const app = new Application();
 armyModule(app);
 foodDeliveryModule(app);
 museumModule(app);
+libraryMode(app);
 
 app.on('error', (error, req, res) => {
     console.error('Application Error:', error);
